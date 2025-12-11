@@ -1,0 +1,382 @@
+.main {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 4rem 1rem;
+	width: 100%;
+}
+
+.mainContent {
+	max-width: 56rem;
+	margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.iconWrapper {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.iconContainer {
+	position: relative;
+}
+
+.iconGlow {
+	position: absolute;
+	inset: 0;
+	background-color: #7a9b5f;
+	filter: blur(2rem);
+	opacity: 0.2;
+	border-radius: 9999px;
+}
+
+.heroIcon {
+	width: 6rem;
+	height: 6rem;
+	color: #7a9b5f;
+	position: relative;
+	stroke-width: 1.5;
+}
+
+.title {
+	margin-bottom: 1rem;
+	color: #a8c78a;
+	letter-spacing: 0.05em;
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+.subtitle {
+	color: #7a9b5f;
+	margin-bottom: 0.5rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+}
+
+.description {
+	color: #d1d5db;
+	max-width: 42rem;
+	margin: 0 auto 2rem;
+	line-height: 1.75;
+}
+
+/* Capabilities Section */
+.capabilities {
+	background-color: rgba(26, 46, 26, 0.6);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+	backdrop-filter: blur(12px);
+}
+
+.capabilitiesTitle {
+	color: #a8c78a;
+	margin-bottom: 1rem;
+	letter-spacing: 0.05em;
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.capabilitiesGrid {
+	display: grid;
+	gap: 1rem;
+	font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+	.capabilitiesGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.capabilityCard {
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 1rem;
+	border-radius: 0.25rem;
+	border: 1px solid #3d4a3d;
+}
+
+.capabilityTitle {
+	color: #7a9b5f;
+	margin-bottom: 0.5rem;
+}
+
+.capabilityDescription {
+	color: #9ca3af;
+}
+
+/* Launch Button */
+.launchButton {
+	background-color: #4a5f3a;
+	color: #f3f4f6;
+	padding: 1.5rem 3rem;
+	letter-spacing: 0.1em;
+	border: 1px solid rgba(122, 155, 95, 0.3);
+	border-radius: 0.375rem;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: background-color 0.2s;
+	box-shadow: 0 10px 15px -3px rgba(74, 95, 58, 0.2);
+}
+
+.launchButton:hover {
+	background-color: #5a6f4a;
+}
+
+.buttonIcon {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+/* Alert */
+.alert {
+	background-color: rgba(120, 53, 15, 0.2);
+	border: 1px solid rgba(180, 83, 9, 0.5);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	display: flex;
+	gap: 0.75rem;
+}
+
+.alertIcon {
+	width: 1rem;
+	height: 1rem;
+	color: #f59e0b;
+	flex-shrink: 0;
+	margin-top: 0.125rem;
+}
+
+.alertContent {
+	color: rgba(253, 230, 138, 0.9);
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.alertContent strong {
+	font-weight: 600;
+}
+
+.info {
+	border-top: 1px solid #3d4a3d;
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(12px);
+	margin-top: auto;
+}
+
+.infoContent {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.infoInner {
+	max-width: 56rem;
+	margin: 0 auto;
+}
+
+/* Technologies Section */
+.technologiesSection {
+	background-color: rgba(26, 46, 26, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.technologiesTitle {
+	color: #a8c78a;
+	margin-bottom: 1rem;
+	letter-spacing: 0.05em;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.technologiesGrid {
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.technologiesGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.techBlock {
+	background-color: rgba(0, 0, 0, 0.3);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.375rem;
+	padding: 1rem;
+}
+
+.techBlockTitle {
+	color: #7a9b5f;
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+	letter-spacing: 0.05em;
+}
+
+.techList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8125rem;
+	color: #d1d5db;
+	line-height: 1.6;
+}
+
+.techList li {
+	margin-bottom: 0.375rem;
+	padding-left: 1rem;
+	position: relative;
+}
+
+.techList li:before {
+	content: '▸';
+	position: absolute;
+	left: 0;
+	color: #7a9b5f;
+}
+
+.githubLinks {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.githubLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid #7a9b5f;
+	border-radius: 0.375rem;
+	color: #a8c78a;
+	text-decoration: none;
+	font-size: 0.8125rem;
+	transition: all 0.2s;
+}
+
+.githubLink:hover {
+	background-color: rgba(122, 155, 95, 0.2);
+	border-color: #a8c78a;
+}
+
+.githubIcon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.teamNote {
+	text-align: center;
+	color: #9ca3af;
+	font-size: 0.75rem;
+	font-style: italic;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid #3d4a3d;
+}
+
+/* Project Info Section */
+.projectInfo {
+	background: linear-gradient(
+		135deg,
+		rgba(26, 46, 26, 0.5) 0%,
+		rgba(45, 58, 45, 0.3) 100%
+	);
+	border: 2px solid #7a9b5f;
+	border-radius: 0.75rem;
+	padding: 2rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+	box-shadow: 0 4px 20px rgba(122, 155, 95, 0.15),
+		inset 0 1px 0 rgba(168, 199, 138, 0.1);
+}
+
+.projectInfo::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, #7a9b5f, transparent);
+	border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.projectInfoTitle {
+	color: #a8c78a;
+	margin-bottom: 1.5rem;
+	letter-spacing: 0.1em;
+	text-align: center;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.projectInfoContent {
+	font-size: 0.9375rem;
+	color: #e5e7eb;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: center;
+}
+
+.projectInfoContent p {
+	line-height: 1.6;
+}
+
+.highlight {
+	color: #a8c78a;
+	font-weight: 600;
+	text-shadow: 0 0 10px rgba(122, 155, 95, 0.3);
+}
+
+.projectInfoFooter {
+	color: #9ca3af;
+	font-size: 0.8125rem;
+	padding-top: 1rem;
+	margin-top: 0.5rem;
+	border-top: 1px solid rgba(122, 155, 95, 0.2);
+	letter-spacing: 0.05em;
+}
+
+.heroButton {
+	background-color: #4a5f3a;
+	color: #f3f4f6;
+	padding: 1.5rem 3rem;
+	letter-spacing: 0.1em;
+	border: 1px solid rgba(122, 155, 95, 0.3);
+	border-radius: 0.375rem;
+	font-size: 1.2rem;
+	font-weight: 500;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+	width: 25rem;
+	gap: 0.5rem;
+	transition: background-color 0.2s;
+	box-shadow: 0 10px 15px -3px rgba(74, 95, 58, 0.2);
+}

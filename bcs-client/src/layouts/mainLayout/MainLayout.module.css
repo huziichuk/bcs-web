@@ -1,0 +1,7 @@
+.container {
+	min-height: 100vh;
+	background: linear-gradient(to bottom right, #1a2e1a, #2d3a2d, #1f2d1f);
+	color: #f3f4f6;
+	display: flex;
+	flex-direction: column;
+}

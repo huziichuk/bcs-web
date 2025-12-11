@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Ubuntu Mono', monospace;
+	font-weight: 400;
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+button,
+input,
+textarea,
+select {
+	font: inherit;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+/* Картинки и медиа по размеру контейнера */
+img,
+picture,
+video,
+canvas {
+	display: block;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

@@ -1,0 +1,687 @@
+.container {
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.container.hidden {
+	max-height: 1vh;
+	overflow: hidden;
+}
+
+/* Session Header */
+.sessionHeader {
+	background: linear-gradient(
+		135deg,
+		rgba(26, 46, 26, 0.8) 0%,
+		rgba(45, 58, 45, 0.6) 100%
+	);
+	border: 2px solid #7a9b5f;
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	position: relative;
+}
+
+.sessionHeader::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, #7a9b5f, transparent);
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.sessionInfo {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.sessionTitle {
+	color: #a8c78a;
+	letter-spacing: 0.15em;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.statusIndicator {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.375rem 0.75rem;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #7a9b5f;
+	border-radius: 0.25rem;
+}
+
+.statusDot {
+	width: 0.5rem;
+	height: 0.5rem;
+	background: #7a9b5f;
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+		box-shadow: 0 0 5px #7a9b5f;
+	}
+	50% {
+		opacity: 0.5;
+		box-shadow: 0 0 10px #7a9b5f;
+	}
+}
+
+.statusText {
+	color: #a8c78a;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+}
+
+.resourceBar {
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.resourceItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.resourceLabel {
+	color: #9ca3af;
+	font-size: 0.625rem;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+}
+
+.resourceValue {
+	color: #a8c78a;
+	font-size: 1.125rem;
+	font-weight: 700;
+	font-family: monospace;
+}
+
+/* Section Common Styles */
+.sectionHeader {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1rem;
+	background: rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid #3d4a3d;
+}
+
+.sectionIcon {
+	width: 1rem;
+	height: 1rem;
+	color: #7a9b5f;
+}
+
+.sectionTitle {
+	color: #a8c78a;
+	font-size: 0.875rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+}
+
+/* Top Row: Video + Logs */
+.topRow {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+	.topRow {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Video Section */
+.videoSection {
+	background: rgba(26, 46, 26, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.videoWrapper {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	background: #000;
+}
+
+.video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.videoOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+}
+
+.crosshair {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40px;
+	height: 40px;
+	border: 2px solid rgba(122, 155, 95, 0.5);
+	border-radius: 50%;
+}
+
+.crosshair::before,
+.crosshair::after {
+	content: '';
+	position: absolute;
+	background: rgba(122, 155, 95, 0.5);
+}
+
+.crosshair::before {
+	top: 50%;
+	left: -10px;
+	right: -10px;
+	height: 2px;
+	transform: translateY(-50%);
+}
+
+.crosshair::after {
+	left: 50%;
+	top: -10px;
+	bottom: -10px;
+	width: 2px;
+	transform: translateX(-50%);
+}
+
+.scanLine {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #7a9b5f, transparent);
+	animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 100%;
+	}
+}
+
+/* Logs Section */
+.logsSection {
+	background: rgba(26, 46, 26, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.logsContent {
+	flex: 1;
+	overflow-y: auto;
+	padding: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-height: 500px;
+}
+
+.emptyState {
+	color: #6b7280;
+	text-align: center;
+	padding: 2rem 1rem;
+	font-size: 0.875rem;
+	font-style: italic;
+}
+
+.logItem {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.375rem;
+	padding: 0.75rem;
+	transition: all 0.2s;
+}
+
+.logItem:hover {
+	border-color: #7a9b5f;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.logHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.5rem;
+}
+
+.logType {
+	color: #a8c78a;
+	font-weight: 700;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+}
+
+.logTime {
+	color: #9ca3af;
+	font-size: 0.6875rem;
+	font-family: monospace;
+}
+
+.logDetails {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+}
+
+.logConfidence {
+	color: #d1d5db;
+}
+
+.logPosition {
+	color: #9ca3af;
+	font-family: monospace;
+}
+
+.confidenceBar {
+	height: 4px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.confidenceFill {
+	height: 100%;
+	background: linear-gradient(90deg, #7a9b5f, #a8c78a);
+	transition: width 0.3s;
+}
+
+/* Bottom Row: Charts + Decisions */
+.bottomRow {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+	.bottomRow {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Charts Section */
+.chartsSection {
+	background: rgba(26, 46, 26, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.chartsContent {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.statsGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+	.statsGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.statCard {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.375rem;
+	padding: 1rem;
+	text-align: center;
+}
+
+.statLabel {
+	color: #9ca3af;
+	font-size: 0.625rem;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.statValue {
+	color: #a8c78a;
+	font-size: 1.75rem;
+	font-weight: 700;
+	font-family: monospace;
+}
+
+.chartContainer {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.375rem;
+	padding: 1rem;
+}
+
+.chartTitle {
+	color: #a8c78a;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	margin-bottom: 1rem;
+}
+
+.barChart {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.barItem {
+	display: grid;
+	grid-template-columns: 80px 1fr 50px;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.barLabel {
+	color: #9ca3af;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+}
+
+.barWrapper {
+	height: 1.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 0.25rem;
+	overflow: hidden;
+}
+
+.barFill {
+	height: 100%;
+	background: linear-gradient(90deg, #7a9b5f, #a8c78a);
+	transition: width 0.5s;
+}
+
+.barValue {
+	color: #a8c78a;
+	font-family: monospace;
+	font-weight: 700;
+	text-align: right;
+}
+
+/* Decisions Section */
+.decisionsSection {
+	background: rgba(26, 46, 26, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.decisionsContent {
+	flex: 1;
+	overflow-y: auto;
+	padding: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-height: 400px;
+}
+
+.decisionItem {
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid #3d4a3d;
+	border-radius: 0.375rem;
+	padding: 0.75rem;
+	transition: all 0.2s;
+}
+
+.decisionItem:hover {
+	border-color: #7a9b5f;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.decisionHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.5rem;
+}
+
+.decisionTime {
+	color: #9ca3af;
+	font-size: 0.6875rem;
+	font-family: monospace;
+}
+
+.decisionStatus {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	font-size: 0.625rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+}
+
+.decisionStatus.approved {
+	background: rgba(34, 197, 94, 0.2);
+	color: #86efac;
+	border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.decisionStatus.rejected {
+	background: rgba(239, 68, 68, 0.2);
+	color: #fca5a5;
+	border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.decisionStatus.pending {
+	background: rgba(245, 158, 11, 0.2);
+	color: #fcd34d;
+	border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.statusIcon {
+	width: 0.75rem;
+	height: 0.75rem;
+}
+
+.decisionAction {
+	color: #d1d5db;
+	font-size: 0.8125rem;
+	line-height: 1.4;
+}
+
+/* Mobile Optimization */
+@media (max-width: 1024px) {
+	.container {
+		padding: 1rem;
+	}
+
+	.sessionHeader {
+		padding: 1rem;
+	}
+
+	.sessionTitle {
+		font-size: 1rem;
+	}
+
+	.resourceBar {
+		gap: 1rem;
+	}
+
+	.resourceValue {
+		font-size: 1rem;
+	}
+
+	.topRow {
+		grid-template-columns: 1fr;
+	}
+
+	.bottomRow {
+		grid-template-columns: 1fr;
+	}
+
+	.statsGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.statValue {
+		font-size: 1.5rem;
+	}
+
+	.logsContent {
+		max-height: 400px;
+	}
+
+	.decisionsContent {
+		max-height: 300px;
+	}
+}
+
+@media (max-width: 640px) {
+	.container {
+		padding: 0.75rem;
+		gap: 1rem;
+	}
+
+	.sessionHeader {
+		padding: 0.875rem;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.sessionInfo {
+		width: 100%;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+
+	.sessionTitle {
+		font-size: 0.875rem;
+	}
+
+	.resourceBar {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.resourceLabel {
+		font-size: 0.5625rem;
+	}
+
+	.resourceValue {
+		font-size: 0.875rem;
+	}
+
+	.sectionTitle {
+		font-size: 0.75rem;
+	}
+
+	.sectionIcon {
+		width: 0.875rem;
+		height: 0.875rem;
+	}
+
+	.statsGrid {
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
+
+	.statCard {
+		padding: 0.75rem;
+	}
+
+	.statLabel {
+		font-size: 0.5625rem;
+	}
+
+	.statValue {
+		font-size: 1.25rem;
+	}
+
+	.chartTitle {
+		font-size: 0.6875rem;
+	}
+
+	.barLabel {
+		font-size: 0.6875rem;
+	}
+
+	.barItem {
+		grid-template-columns: 60px 1fr 40px;
+		gap: 0.5rem;
+	}
+
+	.logItem,
+	.decisionItem {
+		padding: 0.625rem;
+	}
+
+	.logType {
+		font-size: 0.8125rem;
+	}
+
+	.logTime,
+	.decisionTime {
+		font-size: 0.625rem;
+	}
+
+	.logDetails {
+		font-size: 0.6875rem;
+	}
+
+	.decisionAction {
+		font-size: 0.75rem;
+	}
+
+	.decisionStatus {
+		font-size: 0.5625rem;
+		padding: 0.2rem 0.4rem;
+	}
+
+	.statusIcon {
+		width: 0.625rem;
+		height: 0.625rem;
+	}
+}
